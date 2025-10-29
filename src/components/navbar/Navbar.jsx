@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <img
-            src="/assets/Hero/logo.png"
+            src="public/assets/Hero/logo.png"
             alt="Company Logo"
             style={{ height: "75px", width: "auto" }}
           />

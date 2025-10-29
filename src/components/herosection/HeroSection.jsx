@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <Box
       sx={{
-        backgroundImage: "url('public/assets/Hero/hero-bg.png')", // your background map image
+        backgroundImage: "url('/assets/Hero/hero-bg.png')", // your background map image
         backgroundSize: "cover",
         backgroundPosition: "center",
         py: { xs: 8, md: 12 },
@@ -15,7 +15,7 @@ const HeroSection = () => {
         maxWidth="lg"
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row", lg:"column"},
+          flexDirection: { xs: "column", md: "row", },
           alignItems: "center",
           justifyContent: "space-between",
           gap: 6,
@@ -63,7 +63,7 @@ const HeroSection = () => {
           <Stack direction="row" spacing={3} alignItems="center" mb={2}>
             <Box
               component="img"
-              src="public/assets/Hero/googlePlay.png"
+              src="/assets/Hero/googlePlay.png"
               alt="Google Play"
               onClick={() =>
                 window.open(
@@ -87,7 +87,7 @@ const HeroSection = () => {
 
             <Box
               component="img"
-              src="public/assets/Hero/appStore.png"
+              src="/assets/Hero/appStore.png"
               alt="App Store"
               onClick={() =>
                 window.open(
@@ -117,8 +117,8 @@ const HeroSection = () => {
               justifyContent={"space-evenly"}
               mr={"140px"}
             >
-              <img src="public/assets/Hero/qr1.svg" alt="QR Code 1" height="65" />
-              <img src="public/assets/Hero/qr2.svg" alt="QR Code 2" height="65" />
+              <img src="/assets/Hero/qr1.svg" alt="QR Code 1" height="65" />
+              <img src="/assets/Hero/qr2.svg" alt="QR Code 2" height="65" />
             </Stack>
           </Stack>
         </Box>
@@ -128,12 +128,12 @@ const HeroSection = () => {
           sx={{
             flex: 1,
             position: "relative",
-            textAlign: "center",
+            textAlign: "end",
             mt: "30px",
           }}
         >
           <img
-            src="public/assets/Hero/phone.png"
+            src="/assets/Hero/phone.png"
             alt="App Preview"
             style={{ maxWidth: "100%", height: "auto" }}
           />

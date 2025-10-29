@@ -5,25 +5,25 @@ const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      img: "public/assets/HowItWorks/Frame1.png",
+      img: "/assets/HowItWorks/Frame1.png",
       title: "Login to Job site Route",
       desc: "Download Job site route app from Play Store or App Store, create an account, order food, invite friends and earn discounts!",
     },
     {
       id: 2,
-      img: "public/assets/HowItWorks/Frame2.png",
+      img: "/assets/HowItWorks/Frame2.png",
       title: "Log in as Truck owner",
       desc: "As a food truck owner, you get instant access to all active construction sites nearby.",
     },
     {
       id: 3,
-      img: "public/assets/HowItWorks/Frame3.png",
+      img: "/assets/HowItWorks/Frame3.png",
       title: "Log in as Contractor",
       desc: "As a contractor, you can inform the location of your construction sites for food trucks to serve your crew.",
     },
     {
       id: 4,
-      img: "public/assets/HowItWorks/Frame4.png",
+      img: "/assets/HowItWorks/Frame4.png",
       title: "Log in as Civilian",
       desc: "As a civilian, you can track your favorite food trucks and pre-order meals through the app.",
     },
@@ -132,7 +132,7 @@ const HowItWorks = () => {
           <Box sx={{ position: "relative" }}>
             <Box
               component="img"
-              src="public/assets/HowItWorks/Ellipse.png"
+              src="/assets/HowItWorks/Ellipse.png"
               alt="Ellipse"
               sx={{
                 position: "absolute",
@@ -145,7 +145,7 @@ const HowItWorks = () => {
             />
             <Box
               component="img"
-              src="public/assets/HowItWorks/phone2.png"
+              src="/assets/HowItWorks/phone2.png"
               alt="Phone"
               sx={{
                 position: "relative",
