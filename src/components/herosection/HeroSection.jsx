@@ -15,7 +15,7 @@ const HeroSection = () => {
         maxWidth="lg"
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column", md: "row", lg:"column"},
           alignItems: "center",
           justifyContent: "space-between",
           gap: 6,
@@ -91,7 +91,7 @@ const HeroSection = () => {
               alt="App Store"
               onClick={() =>
                 window.open(
-                  "https://www.apple.com/app-store/",
+                  "https://apps.apple.com/us/app/job-site-route/id6740814935",
                   "_blank",
                   "noopener,noreferrer"
                 )

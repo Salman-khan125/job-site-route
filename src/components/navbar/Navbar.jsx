@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom"; // ✅ Added for navigation
+import { Link } from "react-router-dom"; // add for
 
 const NavLinks = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -109,6 +109,7 @@ const Navbar = () => {
             display: { xs: "none", md: "block" },
           }}
         >
+          <Link to="/contact" style={{ textDecoration: "none" }}> 
           <Button
             variant="contained"
             color="primary"
@@ -129,6 +130,7 @@ const Navbar = () => {
           >
             Contact Us
           </Button>
+          </Link>
         </Box>
 
         {/* Hamburger Icon (Mobile Only) */}
@@ -175,6 +177,7 @@ const Navbar = () => {
             </List>
 
             <Box sx={{ mt: "auto", textAlign: "center" }}>
+              <Link to="/contact" style={{ textDecoration: "none" }}>
               <Button
                 variant="contained"
                 color="primary"
@@ -195,6 +198,7 @@ const Navbar = () => {
               >
                 Contact Us
               </Button>
+              </Link>
             </Box>
           </Box>
         </Drawer>

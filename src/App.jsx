@@ -11,8 +11,10 @@ import RatingsSystem from "./components/ratingssystem/RatingsSystem";
 import FoodTruck from "./components/foodtruck/FoodTruck";
 import InfoVideo from "./components/infovideo/InfoVideo";
 import Footer from "./components/footer/Footer";
+import Contact from "./pages/Contact";
 
-// ✅ Home page (your main sections)
+
+//  Home page (your main sections)
 const Home = () => (
   <>
     <HeroSection />
@@ -36,7 +38,9 @@ const Services = () => (
 const Referrals = () => (
   <div style={{ padding: "100px 20px" }}>Referrals Page</div>
 );
-const Contact = () => <div style={{ padding: "100px 20px" }}>Contact Page</div>;
+// const Contact = () => (
+//   <div style={{ padding: "100px 20px" }}>Contact Page</div>
+// )
 
 export default function App() {
   return (
