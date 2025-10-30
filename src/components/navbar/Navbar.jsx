@@ -20,7 +20,7 @@ const NavLinks = styled(Box)(({ theme }) => ({
   gap: theme.spacing(4),
   alignItems: "center",
   [theme.breakpoints.down("md")]: {
-    display: "none", // hide desktop navbar on small screen
+    display: "none",
   },
 }));
 
@@ -41,43 +41,45 @@ const Navbar = () => {
       elevation={3}
       sx={{
         top: 16,
-        left: { xs: 0, sm: "50%" },
-        transform: { xs: "none", sm: "translateX(-50%)" },
-        width: { xs: "100%", sm: "95%", md: "90%" }, // ✅ fix width overflow
-        borderRadius: { xs: 0, sm: "20px" }, // ✅ no radius on small screen (prevents layout shift)
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: { xs: "100%", sm: "95%", md: "90%" }, // ✅ full width on mobile
+        borderRadius: { xs: 0, sm: "20px" },
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
-        transition: "all 0.3s ease",
+        overflow: "hidden",
       }}
     >
       <Toolbar
         sx={{
           justifyContent: "space-between",
-          width: "100%",
-          minHeight: { xs: 60, sm: 72 },
-          px: { xs: 1, sm: 2 }, // ✅ less horizontal padding for mobile
-          overflowX: "hidden", // ✅ no horizontal scroll ever
+          alignItems: "center",
+          px: { xs: 2, sm: 3 },
+          minHeight: { xs: 64, md: 80 },
         }}
       >
-        {/* Logo */}
+        {/* ✅ Logo */}
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            flexShrink: 0, // ✅ prevents stretching
+            flexShrink: 0,
           }}
         >
-          {/* responsive logo: smaller on mobile so hamburger remains visible */}
-          <Box
-            component="img"
+          <img
             src="/assets/Hero/logo.png"
             alt="Company Logo"
-            sx={{ height: { xs: 40, sm: 75 }, width: "auto" }}
+            style={{
+              height: "75px", // stays same as your original on desktop
+              width: "auto",
+              objectFit: "contain",
+              maxWidth: "100%", // ensures it fits within small screens
+            }}
           />
         </Box>
 
         {/* Desktop Nav Links */}
-        <NavLinks>
+        <NavLinks sx={{ mx: "auto" }}>
           {navItems.map((item) => (
             <Typography
               key={item.label}
@@ -102,9 +104,7 @@ const Navbar = () => {
                   backgroundColor: (theme) => theme.palette.primary.main,
                   transition: "width 0.3s ease",
                 },
-                "&:hover::after": {
-                  width: "100%",
-                },
+                "&:hover::after": { width: "100%" },
               }}
             >
               {item.label}
@@ -115,6 +115,7 @@ const Navbar = () => {
         {/* Contact Button (Desktop Only) */}
         <Box
           sx={{
+            ml: "auto",
             display: { xs: "none", md: "block" },
           }}
         >
@@ -142,21 +143,22 @@ const Navbar = () => {
           </Link>
         </Box>
 
-        {/* Hamburger Icon (Mobile Only) */}
+        {/* ✅ Hamburger Icon (Mobile Only) */}
         <IconButton
           color="primary"
           edge="end"
           onClick={toggleDrawer(true)}
           sx={{
             display: { xs: "flex", md: "none" },
-            ml: 1, // ✅ add tiny space between logo & icon
+            ml: { xs: 1, sm: 2 },
+            mr: { xs: 1 },
             flexShrink: 0,
           }}
         >
-          <MenuIcon sx={{ fontSize: 28 }} />
+          <MenuIcon sx={{ fontSize: 30 }} />
         </IconButton>
 
-        {/* Mobile Drawer Menu */}
+        {/* Drawer (Mobile) */}
         <Drawer
           anchor="right"
           open={open}
