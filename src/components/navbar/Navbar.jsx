@@ -37,13 +37,13 @@ const Navbar = () => {
 
   return (
     <AppBar
-      position="relative"
+      position="fixed"
       elevation={3}
       sx={{
         top: 0,
         left: 0,
         right: 0,
-        width: "100vw", // ✅ true full width (fix overflow)
+        width: "100%", // ✅ replaces 100vw to remove right gap
         overflowX: "hidden",
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
@@ -54,27 +54,22 @@ const Navbar = () => {
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          px: { xs: 2, sm: 3 },
+          px: { xs: 1, sm: 2 }, // ✅ smaller padding for logo flush left
           minHeight: { xs: 64, md: 80 },
           overflow: "hidden",
         }}
       >
-        {/* ✅ Logo */}
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            flexShrink: 0,
-          }}
-        >
+        {/* ✅ Logo perfectly aligned to left edge */}
+        <Box sx={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
           <img
             src="/assets/Hero/logo.png"
             alt="Company Logo"
             style={{
-              height: "75px", // ✅ original size restored
+              height: "75px",
               width: "auto",
               objectFit: "contain",
               maxWidth: "100%",
+              display: "block",
             }}
           />
         </Box>
@@ -113,7 +108,7 @@ const Navbar = () => {
           ))}
         </NavLinks>
 
-        {/* Contact Button (Desktop Only) */}
+        {/* Desktop Contact Button */}
         <Box
           sx={{
             ml: "auto",
@@ -142,7 +137,7 @@ const Navbar = () => {
           </Link>
         </Box>
 
-        {/* ✅ Hamburger Menu */}
+        {/* ✅ Mobile Menu Button */}
         <IconButton
           color="primary"
           edge="end"
