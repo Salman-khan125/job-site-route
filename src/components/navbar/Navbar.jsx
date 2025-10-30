@@ -43,7 +43,7 @@ const Navbar = () => {
         top: 16,
         left: "50%",
         transform: "translateX(-50%)",
-        width: { xs: "100%", sm: "95%", md: "90%" }, // ✅ full width on mobile
+        width: { xs: "100%", sm: "95%", md: "90%" },
         borderRadius: { xs: 0, sm: "20px" },
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
@@ -56,6 +56,7 @@ const Navbar = () => {
           alignItems: "center",
           px: { xs: 2, sm: 3 },
           minHeight: { xs: 64, md: 80 },
+          overflow: "hidden",
         }}
       >
         {/* ✅ Logo */}
@@ -64,16 +65,17 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             flexShrink: 0,
+            maxWidth: { xs: "50%", md: "none" }, // prevent overflow
           }}
         >
           <img
             src="/assets/Hero/logo.png"
             alt="Company Logo"
             style={{
-              height: "75px", // stays same as your original on desktop
+              height: "75px",
               width: "auto",
               objectFit: "contain",
-              maxWidth: "100%", // ensures it fits within small screens
+              maxWidth: "100%",
             }}
           />
         </Box>
@@ -123,8 +125,6 @@ const Navbar = () => {
             <Button
               variant="contained"
               color="primary"
-              component={Link}
-              to="/contact"
               sx={{
                 backgroundColor: (theme) => theme.palette.primary.dark,
                 "&:hover": {
@@ -150,8 +150,7 @@ const Navbar = () => {
           onClick={toggleDrawer(true)}
           sx={{
             display: { xs: "flex", md: "none" },
-            ml: { xs: 1, sm: 2 },
-            mr: { xs: 1 },
+            ml: "auto",
             flexShrink: 0,
           }}
         >
@@ -207,8 +206,6 @@ const Navbar = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  component={Link}
-                  to="/contact"
                   sx={{
                     backgroundColor: (theme) => theme.palette.primary.dark,
                     "&:hover": {
