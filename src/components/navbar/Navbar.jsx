@@ -43,8 +43,8 @@ const Navbar = () => {
         top: 16,
         left: "50%",
         transform: "translateX(-50%)",
-        width: { xs: "94%", sm: "92%", md: "90%" },
-        borderRadius: "20px",
+        width: { xs: "100%", sm: "95%", md: "90%" }, // ✅ fix width overflow
+        borderRadius: { xs: 0, sm: "20px" }, // ✅ no radius on small screen (prevents layout shift)
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
         transition: "all 0.3s ease",
@@ -54,13 +54,19 @@ const Navbar = () => {
         sx={{
           justifyContent: "space-between",
           width: "100%",
-          borderRadius: "50px",
-          minHeight: { xs: 64, sm: 72 },
-          px: { xs: 1, sm: 2 },
+          minHeight: { xs: 60, sm: 72 },
+          px: { xs: 1, sm: 2 }, // ✅ less horizontal padding for mobile
+          overflowX: "hidden", // ✅ no horizontal scroll ever
         }}
       >
         {/* Logo */}
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            flexShrink: 0, // ✅ prevents stretching
+          }}
+        >
           <img
             src="/assets/Hero/logo.png"
             alt="Company Logo"
@@ -141,6 +147,8 @@ const Navbar = () => {
           onClick={toggleDrawer(true)}
           sx={{
             display: { xs: "flex", md: "none" },
+            ml: 1, // ✅ add tiny space between logo & icon
+            flexShrink: 0,
           }}
         >
           <MenuIcon sx={{ fontSize: 28 }} />
