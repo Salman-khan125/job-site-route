@@ -9,17 +9,18 @@ const HowItWorks = () => {
       title: "Login to Job site Route",
       desc: "Download Job site route app from Play Store or App Store, create an account, order food, invite friends and earn discounts!",
     },
-    {
-      id: 2,
-      img: "/assets/HowItWorks/Frame2.png",
-      title: "Log in as Truck owner",
-      desc: "As a food truck owner, you get instant access to all active construction sites nearby.",
-    },
+    
     {
       id: 3,
       img: "/assets/HowItWorks/Frame3.png",
       title: "Log in as Contractor",
       desc: "As a contractor, you can inform the location of your construction sites for food trucks to serve your crew.",
+    },
+    {
+      id: 2,
+      img: "/assets/HowItWorks/Frame2.png",
+      title: "Log in as Truck owner",
+      desc: "As a food truck owner, you get instant access to all active construction sites nearby.",
     },
     {
       id: 4,
@@ -57,7 +58,6 @@ const HowItWorks = () => {
         how it connects contractors, truck owners, and civilians seamlessly.
       </Typography>
 
-      {/* ===== Main Grid Layout ===== */}
       <Grid
         container
         alignItems="center"
@@ -91,10 +91,7 @@ const HowItWorks = () => {
               direction="row"
               spacing={2}
               alignItems="flex-start"
-              sx={{
-                maxWidth: 320,
-                mt: index === 1 ? { md: 6 } : 0,
-              }}
+              sx={{ maxWidth: 320, mt: index === 1 ? { md: 6 } : 0 }}
             >
               <Box>
                 <Box
@@ -132,13 +129,74 @@ const HowItWorks = () => {
           ))}
         </Grid>
 
+        {/* Right side (steps 2 & 4) */}
+        <Grid
+          item
+          xs={12}
+          md={4}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            gap: { xs: 6, md: 16 },
+            alignItems: { xs: "center", md: "flex-start" },
+            textAlign: { xs: "center", md: "left" },
+            pl: { md: 4 },
+            mt: { md: 4 },
+            order: { xs: 2, md: 3 },
+          }}
+        >
+          {[steps[1], steps[3]].map((step, index) => (
+            <Stack
+              key={step.id}
+              direction="row"
+              spacing={2}
+              alignItems="flex-start"
+              sx={{ maxWidth: 320, mt: index === 1 ? { md: 6 } : 0 }}
+            >
+              <Box>
+                <Box
+                  component="img"
+                  src={step.img}
+                  alt={step.title}
+                  sx={{
+                    width: 60,
+                    height: 60,
+                    mb: 1,
+                    mx: { xs: "auto", md: 0 },
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 1,
+                    ml: { md: 10 },
+                  }}
+                >
+                  {step.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    ml: { md: 10 },
+                  }}
+                >
+                  {step.desc}
+                </Typography>
+              </Box>
+            </Stack>
+          ))}
+        </Grid>
+
         {/* Center (Phone + Ellipse) */}
         <Grid
           item
           xs={12}
           md={4}
           sx={{
-            order: { xs: 2, md: 2 },
+            order: { xs: 5, md: 2 }, // phone will come LAST on mobile
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -171,70 +229,6 @@ const HowItWorks = () => {
               }}
             />
           </Box>
-        </Grid>
-
-        {/* Right side (steps 2 & 4) */}
-        <Grid
-          item
-          xs={12}
-          md={4}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            gap: { xs: 6, md: 16 },
-            alignItems: { xs: "center", md: "flex-start" },
-            textAlign: { xs: "center", md: "left" },
-            pl: { md: 4 },
-            mt: { md: 4 },
-            order: { xs: 3, md: 3 },
-          }}
-        >
-          {[steps[1], steps[3]].map((step, index) => (
-            <Stack
-              key={step.id}
-              direction="row"
-              spacing={2}
-              alignItems="flex-start"
-              sx={{
-                maxWidth: 320,
-                mt: index === 1 ? { md: 6 } : 0,
-              }}
-            >
-              <Box>
-                <Box
-                  component="img"
-                  src={step.img}
-                  alt={step.title}
-                  sx={{
-                    width: 60,
-                    height: 60,
-                    mb: 1,
-                    mx: { xs: "auto", md: 0 },
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 600,
-                    mb: 1,
-                    ml: { md: 10 },
-                  }}
-                >
-                  {step.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    ml: { md: 10 },
-                  }}
-                >
-                  {step.desc}
-                </Typography>
-              </Box>
-            </Stack>
-          ))}
         </Grid>
       </Grid>
     </Box>
