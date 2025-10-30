@@ -37,19 +37,17 @@ const Navbar = () => {
 
   return (
     <AppBar
-      position="fixed"
+      position="relative"
       elevation={3}
       sx={{
-        top: 16,
+        top: 0,
         left: 0,
         right: 0,
-        mx: "auto",
-        width: "100%",
-        borderRadius: { xs: 0, sm: "20px" },
+        width: "100vw", // ✅ true full width (fix overflow)
+        overflowX: "hidden",
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
-        overflow: "hidden",
-        "& *": { maxWidth: "100%" },
+        borderRadius: 0,
       }}
     >
       <Toolbar
@@ -58,11 +56,7 @@ const Navbar = () => {
           alignItems: "center",
           px: { xs: 2, sm: 3 },
           minHeight: { xs: 64, md: 80 },
-          width: "100%",
-          maxWidth: "100%",
           overflow: "hidden",
-          overflowX: "hidden", // ✅ prevent side scrolling
-          flexWrap: "nowrap",
         }}
       >
         {/* ✅ Logo */}
@@ -71,14 +65,13 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             flexShrink: 0,
-            maxWidth: { xs: "35%", sm: "40%", md: "none" }, // ✅ smaller on mobile
           }}
         >
           <img
             src="/assets/Hero/logo.png"
             alt="Company Logo"
             style={{
-              height: "65px",
+              height: "75px", // ✅ original size restored
               width: "auto",
               objectFit: "contain",
               maxWidth: "100%",
@@ -86,7 +79,7 @@ const Navbar = () => {
           />
         </Box>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Links */}
         <NavLinks sx={{ mx: "auto" }}>
           {navItems.map((item) => (
             <Typography
@@ -149,21 +142,20 @@ const Navbar = () => {
           </Link>
         </Box>
 
-        {/* ✅ Hamburger Icon (Mobile Only) */}
+        {/* ✅ Hamburger Menu */}
         <IconButton
           color="primary"
           edge="end"
           onClick={toggleDrawer(true)}
           sx={{
             display: { xs: "flex", md: "none" },
-            ml: 1, // ✅ brings menu closer to logo
-            flexShrink: 0,
+            ml: "auto",
           }}
         >
           <MenuIcon sx={{ fontSize: 30 }} />
         </IconButton>
 
-        {/* Drawer (Mobile) */}
+        {/* Drawer */}
         <Drawer
           anchor="right"
           open={open}
