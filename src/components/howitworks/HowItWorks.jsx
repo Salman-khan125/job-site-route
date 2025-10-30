@@ -68,7 +68,7 @@ const HowItWorks = () => {
           position: "relative",
         }}
       >
-        {/* Left side (steps 1 & 3) */}
+        {/* Left side (steps 1 & 2) */}
         <Grid
           item
           xs={12}
@@ -129,7 +129,7 @@ const HowItWorks = () => {
           ))}
         </Grid>
 
-        {/* Right side (steps 2 & 4) */}
+        {/* Right side (steps 3 & 4) */}
         <Grid
           item
           xs={12}
@@ -144,6 +144,7 @@ const HowItWorks = () => {
             pl: { md: 4 },
             mt: { md: 4 },
             order: { xs: 2, md: 3 },
+             mt: { xs: 6, md: 4 },
           }}
         >
           {[steps[1], steps[3]].map((step, index) => (
@@ -162,7 +163,7 @@ const HowItWorks = () => {
                   sx={{
                     width: 60,
                     height: 60,
-                    mb: 1,
+                    mt: { sx: "20px", md: 1 },
                     mx: { xs: "auto", md: 0 },
                   }}
                 />
@@ -202,6 +203,7 @@ const HowItWorks = () => {
             alignItems: "center",
             my: { xs: 8, md: 0 },
             position: "relative",
+            
           }}
         >
           <Box sx={{ position: "relative" }}>

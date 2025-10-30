@@ -60,8 +60,8 @@ const TruckOwner = () => {
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "center",
-            minHeight: 450,
-            ml: 35,
+            minHeight: { xs: 320, md: 450 },
+            ml: { xs: 0, md: 35 },
           }}
         >
           {/* Background Ellipse */}
@@ -71,9 +71,9 @@ const TruckOwner = () => {
             alt="background ellipse"
             sx={{
               position: "absolute",
-              right: "-5%",
-              top: "5%",
-              width: 450,
+              left: { xs: "120%", md: "-100%" },
+              top: { xs: "25%", md: "20%" },
+              width: { xs: 200, sm: 300, md: 400 },
               height: "auto",
               zIndex: 1,
               pointerEvents: "none",
@@ -86,10 +86,10 @@ const TruckOwner = () => {
             src="/assets/appworks/phone2.png"
             alt="phone2"
             sx={{
-              width: 210,
+              width: { xs: 100, sm: 160, md: 210 },
               position: "absolute",
-              right: "5%",
-              top: "18%",
+              left: { xs: "220%", md: "1%" },
+              top: { xs: "28%", md: "18%" },
               zIndex: 2,
               pointerEvents: "none",
             }}
@@ -101,10 +101,10 @@ const TruckOwner = () => {
             src="/assets/appworks/phone1.png"
             alt="phone1"
             sx={{
-              width: 220,
+              width: { xs: 100, sm: 170, md: 220 },
               position: "relative",
-              right: "99%",
-              top: "-8%",
+              left: { xs: "120%", md: "-100%" },
+              top: { xs: "100%", md: "-8%" },
               zIndex: 2,
               ml: 1,
               pointerEvents: "none",
@@ -118,24 +118,24 @@ const TruckOwner = () => {
             alt="delivery"
             sx={{
               position: "absolute",
-              top: "-55%",
-              right: "-14%",
-              width: 500,
+              bottom: { xs: "55%", md: "47%" },
+              left: { xs: "135%", md: "-100%" },
+              width: { xs: 160, sm: 220, md: 500 },
               zIndex: 3,
               pointerEvents: "none",
             }}
           />
 
-          {/* Receive Icon (top left, slightly lower) */}
+          {/* Receive Icon (top left) */}
           <Box
             component="img"
             src="/assets/appworks/Receive.png"
             alt="receive"
             sx={{
               position: "absolute",
-              top: "3%",
-              left: "-200%",
-              width: 350,
+              top: { xs: "40%", md: "3%" },
+              left: { xs: "45%", md: "-200%" },
+              width: { xs: 140, sm: 200, md: 350 },
               zIndex: 3,
             }}
           />
@@ -147,9 +147,9 @@ const TruckOwner = () => {
             alt="sandwich"
             sx={{
               position: "absolute",
-              top: "60%",
-              left: "-145%",
-              width: 250,
+              top: { xs: "55%", md: "60%" },
+              left: { xs: "65%", md: "-145%" },
+              width: { xs: 120, sm: 180, md: 250 },
               zIndex: 3,
             }}
           />
