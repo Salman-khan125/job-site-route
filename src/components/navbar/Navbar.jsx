@@ -41,8 +41,8 @@ const Navbar = () => {
       elevation={3}
       sx={{
         top: 16,
-        left: "50%",
-        transform: "translateX(-50%)",
+        left: { xs: 0, sm: "50%" },
+        transform: { xs: "none", sm: "translateX(-50%)" },
         width: { xs: "100%", sm: "95%", md: "90%" }, // ✅ fix width overflow
         borderRadius: { xs: 0, sm: "20px" }, // ✅ no radius on small screen (prevents layout shift)
         backgroundColor: (theme) => theme.palette.background.paper,
@@ -67,10 +67,12 @@ const Navbar = () => {
             flexShrink: 0, // ✅ prevents stretching
           }}
         >
-          <img
+          {/* responsive logo: smaller on mobile so hamburger remains visible */}
+          <Box
+            component="img"
             src="/assets/Hero/logo.png"
             alt="Company Logo"
-            style={{ height: "75px", width: "auto" }}
+            sx={{ height: { xs: 40, sm: 75 }, width: "auto" }}
           />
         </Box>
 
