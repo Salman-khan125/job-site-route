@@ -50,6 +50,7 @@ const HowItWorks = () => {
           mb: { xs: 6, md: 10 },
           maxWidth: 600,
           mx: "auto",
+          px: 2,
         }}
       >
         Download the Job Site Route app, create an account, and start exploring
@@ -77,10 +78,11 @@ const HowItWorks = () => {
             flexDirection: "column",
             justifyContent: "space-between",
             gap: { xs: 6, md: 16 },
-            alignItems: "flex-end",
-            textAlign: "right",
+            alignItems: { xs: "center", md: "flex-end" },
+            textAlign: { xs: "center", md: "right" },
             pr: { md: 4 },
             mt: { md: 4 },
+            order: { xs: 1, md: 1 },
           }}
         >
           {[steps[0], steps[2]].map((step, index) => (
@@ -102,13 +104,27 @@ const HowItWorks = () => {
                   sx={{
                     width: 60,
                     height: 60,
-                    mb: 1, mr: 10,
+                    mb: 1,
+                    mx: { xs: "auto", md: 0 },
                   }}
                 />
-                <Typography variant="h6" sx={{ fontWeight: 600, mr :10, mb:1 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 1,
+                    mr: { md: 10 },
+                  }}
+                >
                   {step.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{mr: 10}}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    mr: { md: 10 },
+                  }}
+                >
                   {step.desc}
                 </Typography>
               </Box>
@@ -122,6 +138,7 @@ const HowItWorks = () => {
           xs={12}
           md={4}
           sx={{
+            order: { xs: 2, md: 2 },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -150,7 +167,7 @@ const HowItWorks = () => {
               sx={{
                 position: "relative",
                 width: { xs: 220, md: 280 },
-                zIndex: 2, 
+                zIndex: 2,
               }}
             />
           </Box>
@@ -166,10 +183,11 @@ const HowItWorks = () => {
             flexDirection: "column",
             justifyContent: "space-between",
             gap: { xs: 6, md: 16 },
-            alignItems: "flex-start",
-            textAlign: "left",
+            alignItems: { xs: "center", md: "flex-start" },
+            textAlign: { xs: "center", md: "left" },
             pl: { md: 4 },
             mt: { md: 4 },
+            order: { xs: 3, md: 3 },
           }}
         >
           {[steps[1], steps[3]].map((step, index) => (
@@ -191,13 +209,27 @@ const HowItWorks = () => {
                   sx={{
                     width: 60,
                     height: 60,
-                    mb: 1, ml:10,
+                    mb: 1,
+                    mx: { xs: "auto", md: 0 },
                   }}
                 />
-                <Typography variant="h6" sx={{ fontWeight: 600 ,ml:10, mb:1 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 1,
+                    ml: { md: 10 },
+                  }}
+                >
                   {step.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ml: 10}}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    ml: { md: 10 },
+                  }}
+                >
                   {step.desc}
                 </Typography>
               </Box>
