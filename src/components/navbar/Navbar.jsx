@@ -44,12 +44,12 @@ const Navbar = () => {
         left: 0,
         right: 0,
         mx: "auto",
-        width: "100%", // ✅ full width but no overflow
+        width: "100%",
         borderRadius: { xs: 0, sm: "20px" },
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
         overflow: "hidden",
-         "& *": { maxWidth: "100%" },
+        "& *": { maxWidth: "100%" },
       }}
     >
       <Toolbar
@@ -61,6 +61,7 @@ const Navbar = () => {
           width: "100%",
           maxWidth: "100%",
           overflow: "hidden",
+          overflowX: "hidden", // ✅ prevent side scrolling
           flexWrap: "nowrap",
         }}
       >
@@ -70,14 +71,14 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             flexShrink: 0,
-            maxWidth: { xs: "45%", md: "none" }, // fit logo on mobile
+            maxWidth: { xs: "35%", sm: "40%", md: "none" }, // ✅ smaller on mobile
           }}
         >
           <img
             src="/assets/Hero/logo.png"
             alt="Company Logo"
             style={{
-              height: "75px",
+              height: "65px",
               width: "auto",
               objectFit: "contain",
               maxWidth: "100%",
@@ -155,7 +156,7 @@ const Navbar = () => {
           onClick={toggleDrawer(true)}
           sx={{
             display: { xs: "flex", md: "none" },
-            ml: "auto",
+            ml: 1, // ✅ brings menu closer to logo
             flexShrink: 0,
           }}
         >
