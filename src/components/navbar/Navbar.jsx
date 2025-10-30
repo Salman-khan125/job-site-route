@@ -49,6 +49,7 @@ const Navbar = () => {
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
         overflow: "hidden",
+         "& *": { maxWidth: "100%" },
       }}
     >
       <Toolbar
