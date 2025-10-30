@@ -41,9 +41,10 @@ const Navbar = () => {
       elevation={3}
       sx={{
         top: 16,
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: { xs: "100%", sm: "95%", md: "90%" },
+        left: 0,
+        right: 0,
+        mx: "auto",
+        width: "100%", // ✅ full width but no overflow
         borderRadius: { xs: 0, sm: "20px" },
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
@@ -56,7 +57,10 @@ const Navbar = () => {
           alignItems: "center",
           px: { xs: 2, sm: 3 },
           minHeight: { xs: 64, md: 80 },
+          width: "100%",
+          maxWidth: "100%",
           overflow: "hidden",
+          flexWrap: "nowrap",
         }}
       >
         {/* ✅ Logo */}
@@ -65,7 +69,7 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             flexShrink: 0,
-            maxWidth: { xs: "50%", md: "none" }, // prevent overflow
+            maxWidth: { xs: "45%", md: "none" }, // fit logo on mobile
           }}
         >
           <img
