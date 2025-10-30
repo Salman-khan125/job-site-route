@@ -15,10 +15,12 @@ const HeroSection = () => {
         maxWidth="lg"
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row", },
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 6,
+          gap: { xs: 4, md: 6 },
+          textAlign: { xs: "center", md: "left" },
+          mt: { xs: 4, md: 0 },
         }}
       >
         {/* LEFT SIDE */}
@@ -30,6 +32,7 @@ const HeroSection = () => {
               color: "text.primary",
               mb: 2,
               lineHeight: 1.2,
+              fontSize: { xs: "1.9rem", sm: "2.2rem", md: "3rem" },
             }}
           >
             Download{" "}
@@ -37,7 +40,7 @@ const HeroSection = () => {
               component="span"
               sx={{
                 color: "primary.main",
-                font: 900,
+                fontWeight: 900,
                 fontSize: { xs: "2rem", md: "3rem" },
               }}
             >
@@ -51,7 +54,8 @@ const HeroSection = () => {
             sx={{
               color: "text.secondary",
               mb: 4,
-              maxWidth: "480px",
+              maxWidth: { xs: "100%", sm: "480px" },
+              mx: { xs: "auto", md: 0 },
             }}
           >
             Download the Job Site Route app from the Google Play store or App
@@ -60,7 +64,13 @@ const HeroSection = () => {
           </Typography>
 
           {/* App Store Buttons + QR codes */}
-          <Stack direction="row" spacing={3} alignItems="center" mb={2}>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={{ xs: 2, sm: 3 }}
+            alignItems="center"
+            justifyContent={{ xs: "center", md: "flex-start" }}
+            mb={2}
+          >
             <Box
               component="img"
               src="/assets/Hero/googlePlay.png"
@@ -73,14 +83,14 @@ const HeroSection = () => {
                 )
               }
               sx={{
-                height: 55,
+                height: { xs: 50, md: 55 },
                 width: "auto",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
                 filter: "brightness(1)",
                 "&:hover": {
-                  filter: "brightness(0.6)", // darkens on hover
-                  transform: "scale(1.05)", // slight zoom
+                  filter: "brightness(0.6)",
+                  transform: "scale(1.05)",
                 },
               }}
             />
@@ -97,7 +107,7 @@ const HeroSection = () => {
                 )
               }
               sx={{
-                height: 55,
+                height: { xs: 50, md: 55 },
                 width: "auto",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
@@ -110,15 +120,27 @@ const HeroSection = () => {
             />
           </Stack>
 
-          <Stack>
+          <Stack alignItems={{ xs: "center", md: "flex-start" }}>
             <Stack
               direction="row"
-              spacing={1}
-              justifyContent={"space-evenly"}
-              mr={"140px"}
+              spacing={2}
+              justifyContent={{ xs: "center", md: "flex-start" }}
+              sx={{
+                mr: { xs: 0, md: "140px" },
+              }}
             >
-              <img src="/assets/Hero/qr1.svg" alt="QR Code 1" height="65" />
-              <img src="/assets/Hero/qr2.svg" alt="QR Code 2" height="65" />
+              <Box
+                component="img"
+                src="/assets/Hero/qr1.svg"
+                alt="QR Code 1"
+                sx={{ height: { xs: 55, md: 65 }, width: "auto" }}
+              />
+              <Box
+                component="img"
+                src="/assets/Hero/qr2.svg"
+                alt="QR Code 2"
+                sx={{ height: { xs: 55, md: 65 }, width: "auto" }}
+              />
             </Stack>
           </Stack>
         </Box>
@@ -128,14 +150,18 @@ const HeroSection = () => {
           sx={{
             flex: 1,
             position: "relative",
-            textAlign: "end",
-            mt: "30px",
+            textAlign: { xs: "center", md: "end" },
+            mt: { xs: 4, md: "30px" },
           }}
         >
-          <img
+          <Box
+            component="img"
             src="/assets/Hero/phone.png"
             alt="App Preview"
-            style={{ maxWidth: "100%", height: "auto" }}
+            sx={{
+              maxWidth: { xs: "80%", sm: "70%", md: "100%" },
+              height: "auto",
+            }}
           />
           {/* Floating elements (you’ll add your icons later) */}
         </Box>
