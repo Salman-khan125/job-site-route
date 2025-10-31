@@ -58,7 +58,7 @@ const Civilian = () => {
           sx={{
             position: "relative",
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "start",
             alignItems: "center",
             minHeight: 450,
             ml: 35,
@@ -71,7 +71,7 @@ const Civilian = () => {
             alt="background ellipse"
             sx={{
               position: "absolute",
-              right: {xs:"-5%", sm: "-10%", md: "5%" },
+              right: {xs:"60%", sm: "-10%", md: "5%" },
               top: {  xs: "20%", sm: "10%", md: "10%" },
               width: { xs: "280px", sm: "350px", md: "420px" },
               height: "auto",
@@ -87,7 +87,7 @@ const Civilian = () => {
             sx={{
                width: { xs: "130px", sm: "150px", md: "200px" },
               position: "absolute",
-              left: { xs: "0%", sm: "-3%", md: "10%" },
+              left: { xs: "-80%", sm: "-3%", md: "10%" },
               top: {  xs: "30%", sm: "25%", md: "18%" },
               zIndex: 1,
             }}
@@ -101,7 +101,7 @@ const Civilian = () => {
             sx={{
                width: { xs: "130px", sm: "150px", md: "200px" },
               position: "relative",
-              right: {      xs: "100%", sm: "110%", md: "95%" },
+              right: {xs: "190%", sm: "110%", md: "95%" },
               bottom: { xs: "25%", sm: "35%", md: "60%" },
               zIndex: 2,
             }}
@@ -115,7 +115,7 @@ const Civilian = () => {
             sx={{
               position: "absolute",
               top: {xs: "17%", sm: "10%", md: "0%" },
-              right: { xs: "-10%", sm: "-5%", md: "-10%" },
+              right: { xs: "60%", sm: "-5%", md: "-10%" },
                width: { xs: "200px", sm: "250px", md: "300px" },  
               zIndex: 3,
             }}
@@ -129,7 +129,7 @@ const Civilian = () => {
             sx={{
               position: "absolute",
               bottom: { xs: "30%", sm: "25%", md: "10%" },
-              right: {  xs: "145%", sm: "160%", md: "140%" },
+              right: {  xs: "235%", sm: "160%", md: "140%" },
               width: { xs: "130px", sm: "150px", md: "240px" },
               zIndex: 3,
             }}
