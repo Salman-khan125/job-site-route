@@ -11,7 +11,7 @@ import Contractor from "./parts/Contractor";
 import Civilian from "./parts/Civilian";
 
 const HowAppWorks = () => {
-  const [selected, setSelected] = useState("contractor");
+  const [selected, setSelected] = useState("civilian");
 
   const handleChange = (event, newSelection) => {
     if (newSelection !== null) {

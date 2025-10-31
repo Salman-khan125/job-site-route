@@ -71,9 +71,9 @@ const Civilian = () => {
             alt="background ellipse"
             sx={{
               position: "absolute",
-              right: "-5%",
-              top: "10%",
-              width: 420,
+              right: {xs:"-5%", sm: "-10%", md: "5%" },
+              top: {  xs: "20%", sm: "10%", md: "10%" },
+              width: { xs: "280px", sm: "350px", md: "420px" },
               height: "auto",
               zIndex: 1,
             }}
@@ -85,10 +85,10 @@ const Civilian = () => {
             src="/assets/civilian/phone2.png"
             alt="phone2"
             sx={{
-              width: 220,
+               width: { xs: "130px", sm: "150px", md: "200px" },
               position: "absolute",
-              right: "-10%",
-              top: "18%",
+              left: { xs: "0%", sm: "-3%", md: "10%" },
+              top: {  xs: "30%", sm: "25%", md: "18%" },
               zIndex: 1,
             }}
           />
@@ -99,10 +99,10 @@ const Civilian = () => {
             src="/assets/civilian/phone1.png"
             alt="phone1"
             sx={{
-              width: 220,
+               width: { xs: "130px", sm: "150px", md: "200px" },
               position: "relative",
-              right: "95%",
-              top: "-60%",
+              right: {      xs: "100%", sm: "110%", md: "95%" },
+              bottom: { xs: "25%", sm: "35%", md: "60%" },
               zIndex: 2,
             }}
           />
@@ -114,9 +114,9 @@ const Civilian = () => {
             alt="truck"
             sx={{
               position: "absolute",
-              top: "0%",
-              right: "8%",
-              width: 270,
+              top: {xs: "17%", sm: "10%", md: "0%" },
+              right: { xs: "-10%", sm: "-5%", md: "-10%" },
+               width: { xs: "200px", sm: "250px", md: "300px" },  
               zIndex: 3,
             }}
           />
@@ -128,9 +128,9 @@ const Civilian = () => {
             alt="pizzaprice"
             sx={{
               position: "absolute",
-              bottom: "10%",
-              left: "-160%",
-              width: 240,
+              bottom: { xs: "30%", sm: "25%", md: "10%" },
+              right: {  xs: "145%", sm: "160%", md: "140%" },
+              width: { xs: "130px", sm: "150px", md: "240px" },
               zIndex: 3,
             }}
           />
