@@ -26,7 +26,17 @@ const NavLinks = styled(Box)(({ theme }) => ({
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const toggleDrawer = (state) => () => setOpen(state);
+  const toggleDrawer = (state) => (event) => {
+  // prevent issues with keyboard events or Link navigation timing
+  if (
+    event.type === "keydown" &&
+    (event.key === "Tab" || event.key === "Shift")
+  ) {
+    return;
+  }
+  setOpen(state);
+};
+
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -197,6 +207,7 @@ const Navbar = () => {
             <Box sx={{ mt: "auto", textAlign: "center" }}>
               <Link to="/contact" style={{ textDecoration: "none" }}>
                 <Button
+                onClick={toggleDrawer(false)}
                   variant="contained"
                   color="primary"
                   sx={{

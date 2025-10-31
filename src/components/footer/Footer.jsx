@@ -9,7 +9,7 @@ const Footer = () => {
         "📍 8306 Wilshire Blvd. Suite 777 Beverly Hills, CA 90211",
         "📧 info@jobsiteroute.com",
         "📞 (424) 204-2382",
-        "Promotions",
+        
       ],
     },
     {
@@ -24,7 +24,6 @@ const Footer = () => {
       title: "How to Become a BiomedRX Hemp Distributor",
       items: [
         "Please send us an email",
-        "FAQs",
         "Expressing your interest, and we will contact you promptly.",
         "We only drop ship wholesale to distributors with orders of 10 bottles or more, not including DMSO.",
       ],

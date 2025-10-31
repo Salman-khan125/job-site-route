@@ -18,9 +18,9 @@ const HeroSection = () => {
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          gap: { xs: 4, md: 6 },
+          gap: { xs: 3, md: 6 },
           textAlign: { xs: "center", md: "left" },
-          mt: { xs: 4, md: 0 },
+          mt: { xs: 2, md: 0 },
         }}
       >
         {/* LEFT SIDE */}
@@ -66,80 +66,87 @@ const HeroSection = () => {
           {/* App Store Buttons + QR codes */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
-            spacing={{ xs: 2, sm: 3 }}
-            alignItems="center"
+            spacing={{ xs: 3, sm: 4 }}
+            alignItems={{ xs: "center", md: "flex-start" }}
             justifyContent={{ xs: "center", md: "flex-start" }}
-            mb={2}
           >
-            <Box
-              component="img"
-              src="/assets/Hero/googlePlay.png"
-              alt="Google Play"
-              onClick={() =>
-                window.open(
-                  " https://play.google.com/store/apps/details?id=com.job.site.route",
-                  "_blank",
-                  "noopener,noreferrer"
-                )
-              }
-              sx={{
-                height: { xs: 50, md: 55 },
-                width: "auto",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                filter: "brightness(1)",
-                "&:hover": {
-                  filter: "brightness(0.6)",
-                  transform: "scale(1.05)",
-                },
-              }}
-            />
-
-            <Box
-              component="img"
-              src="/assets/Hero/appStore.png"
-              alt="App Store"
-              onClick={() =>
-                window.open(
-                  "https://apps.apple.com/us/app/job-site-route/id6740814935",
-                  "_blank",
-                  "noopener,noreferrer"
-                )
-              }
-              sx={{
-                height: { xs: 50, md: 55 },
-                width: "auto",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                filter: "brightness(1)",
-                "&:hover": {
-                  filter: "brightness(0.6)",
-                  transform: "scale(1.05)",
-                },
-              }}
-            />
-          </Stack>
-
-          <Stack alignItems={{ xs: "center", md: "flex-start" }}>
+            {/* Google Play + QR1 */}
             <Stack
-              direction="row"
               spacing={2}
-              justifyContent={{ xs: "center", md: "flex-start" }}
-              sx={{
-                mr: { xs: 0, md: "140px" },
-              }}
+              alignItems="center"
             >
               <Box
                 component="img"
-                src="/assets/Hero/qr1.svg"
-                alt="QR Code 1"
-                sx={{ height: { xs: 55, md: 65 }, width: "auto" }}
+                src="/assets/Hero/googlePlay.png"
+                alt="Google Play"
+                onClick={() =>
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=com.job.site.route",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                sx={{
+                  height: { xs: 50, md: 55 },
+                  width: "auto",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  filter: "brightness(1)",
+                  "&:hover": {
+                    filter: "brightness(0.6)",
+                    transform: "scale(1.05)",
+                  },
+                }}
               />
               <Box
                 component="img"
-                src="/assets/Hero/qr2.svg"
-                alt="QR Code 2"
-                sx={{ height: { xs: 55, md: 65 }, width: "auto" }}
+                src="/assets/Hero/qr1.png"
+                alt="QR Code Google Play"
+                sx={{
+                  height: { xs: 55, md: 65 },
+                  width: "auto",
+                  display: "block",
+                }}
+              />
+            </Stack>
+
+            {/* App Store + QR2 */}
+            <Stack
+              spacing={2}
+              alignItems="center"
+            >
+              <Box
+                component="img"
+                src="/assets/Hero/appStore.png"
+                alt="App Store"
+                onClick={() =>
+                  window.open(
+                    "https://apps.apple.com/us/app/job-site-route/id6740814935",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                sx={{
+                  height: { xs: 50, md: 55 },
+                  width: "auto",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  filter: "brightness(1)",
+                  "&:hover": {
+                    filter: "brightness(0.6)",
+                    transform: "scale(1.05)",
+                  },
+                }}
+              />
+              <Box
+                component="img"
+                src="/assets/Hero/qr2.png"
+                alt="QR Code App Store"
+                sx={{
+                  height: { xs: 55, md: 65 },
+                  width: "auto",
+                  display: "block",
+                }}
               />
             </Stack>
           </Stack>
@@ -159,8 +166,10 @@ const HeroSection = () => {
             src="/assets/Hero/phone.png"
             alt="App Preview"
             sx={{
-              maxWidth: { xs: "80%", sm: "70%", md: "100%" },
+              maxWidth: { xs: "70%", sm: "60%", md: "100%" },
               height: "auto",
+              display: "block",
+              mx: "auto"
             }}
           />
           {/* Floating elements (you’ll add your icons later) */}
