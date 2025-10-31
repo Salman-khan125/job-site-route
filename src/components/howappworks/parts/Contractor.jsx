@@ -72,6 +72,7 @@ const Contractor = () => {
             src="/assets/contractor/Ellipse.png"
             alt="background ellipse"
             sx={{
+              justifyContent: "center",
               position: "absolute",
               right: { xs: "20%", sm: "-10%", md: "25%" },
               top: {  xs: "20%",md: "10%" },
@@ -87,6 +88,7 @@ const Contractor = () => {
             src="/assets/contractor/phone2.png"
             alt="phone2"
             sx={{
+              justifyContent: "center",
               width: { xs: 170, sm: 210, md: 220 },
               position: "absolute",
               right: { xs: "20%", sm: "-20%", md: "20%" },
@@ -101,6 +103,10 @@ const Contractor = () => {
             src="/assets/contractor/phone1.png"
             alt="phone1"
             sx={{
+              justifyContent: "center",
+              position: "absolute",
+              top: { xs: "0%", sm: "-10%", md: "-10%" },
+              right: { xs: "5%", sm: "0%", md: "5%" },
               width: { xs: 150, sm: 200, md: 200 },
               position: "relative",
               right: { xs: "120%", sm: "70%", md: "120%" },
@@ -115,6 +121,7 @@ const Contractor = () => {
             src="/assets/contractor/truck.png"
             alt="truck"
             sx={{
+              justifyContent: "center",
               position: "absolute",
               top: { xs: "14%", sm: "5%", md: "5%" },
               right: { xs: "45%", md: "50%" },
