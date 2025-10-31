@@ -63,7 +63,6 @@ const Footer = () => {
             spacing={0} // ↓ reduced spacing between logo & buttons
             textAlign={{ xs: "center", md: "left" }}
           >
-            
             <Box
               component="img"
               src="/assets/footer/Frame.png"
@@ -88,8 +87,8 @@ const Footer = () => {
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Stack
               spacing={1.5}
-              alignItems={{ xs: "center", md: "flex-start" }}
-              textAlign={{ xs: "center", md: "left" }}
+              alignItems={{ xs: "flex-start", md: "flex-start" }}
+              textAlign={{ xs: "left", md: "left" }}
             >
               <Typography
                 variant="subtitle1"
