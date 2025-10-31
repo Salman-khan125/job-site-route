@@ -1,11 +1,13 @@
 import { Box, Typography, Grid, Stack } from "@mui/material";
-
 const Contractor = () => {
   return (
     <Grid container spacing={6} alignItems="center">
-      {/* Left side - Steps */}
+      
+      
       <Grid item xs={12} md={6}>
+      
         <Stack spacing={4}>
+          
           {[
             "Download and install the Job Site Route app from the App Store or Google Play Store.",
             "Create a contractor account and profile. Locate all of the food trucks that use the app in your area.",
@@ -21,6 +23,7 @@ const Contractor = () => {
                 gap: 2,
               }}
             >
+              
               <Box
                 sx={{
                   minWidth: 60,
@@ -35,25 +38,23 @@ const Contractor = () => {
                   fontSize: "18px",
                 }}
               >
+              
                 {index + 1}
               </Box>
               <Typography
                 variant="body1"
-                sx={{
-                  color: "#333",
-                  lineHeight: 1.6,
-                  maxWidth: 500,
-                }}
+                sx={{ color: "#333", lineHeight: 1.6, maxWidth: 500 }}
               >
+            
                 {text}
               </Typography>
             </Box>
           ))}
         </Stack>
       </Grid>
-
       {/* Right side - Images */}
       <Grid item xs={12} md={6}>
+      
         <Box
           sx={{
             position: "relative",
@@ -64,6 +65,7 @@ const Contractor = () => {
             ml: 35,
           }}
         >
+        
           {/* Background Ellipse */}
           <Box
             component="img"
@@ -71,45 +73,42 @@ const Contractor = () => {
             alt="background ellipse"
             sx={{
               position: "absolute",
-              right: "-5%",
-              top: "10%",
-              width: 420,
+              right: { xs: "-3%", md: "25%" },
+              top: {  xs: "25%",md: "10%" },
+              width: { xs: 200, sm:300, md: 350 },
               height: "auto",
               zIndex: 1,
-              pointerEvents: "none",
+              
             }}
           />
-
           {/* Phone 2 (behind) */}
           <Box
             component="img"
             src="/assets/contractor/phone2.png"
             alt="phone2"
             sx={{
-              width: 250,
+              width: { xs: 100, sm: 210, md: 220 },
               position: "absolute",
-              right: "-10%",
-              top: "18%",
+              right: { xs: "0%", sm: "-20%", md: "20%" },
+              bootom: { xs: "10%", sm: "0%", md: "0%" },
               zIndex: 1,
               pointerEvents: "none",
             }}
           />
-
           {/* Phone 1 (front) */}
           <Box
             component="img"
             src="/assets/contractor/phone1.png"
             alt="phone1"
             sx={{
-              width: 220,
+              width: { xs: 100, sm: 200, md: 200 },
               position: "relative",
-              right: "95%",
-              top: "-60%",
+              right: { xs: "100%", sm: "70%", md: "120%" },
+              top:{ xs: "40%"},
               zIndex: 2,
               pointerEvents: "none",
             }}
           />
-
           {/* Truck Icon */}
           <Box
             component="img"
@@ -117,9 +116,9 @@ const Contractor = () => {
             alt="truck"
             sx={{
               position: "absolute",
-              top: "0%",
-              right: "15%",
-              width: 250,
+              top: { xs: "25%", md: "5%" },
+              right: { xs: "15%", md: "50%" },
+              width: { xs: 120, sm: 100, md: 210 },
               zIndex: 3,
               backgroundColor: "",
               pointerEvents: "none",
@@ -130,5 +129,4 @@ const Contractor = () => {
     </Grid>
   );
 };
-
 export default Contractor;
