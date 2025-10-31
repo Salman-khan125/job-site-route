@@ -73,9 +73,9 @@ const Contractor = () => {
             alt="background ellipse"
             sx={{
               position: "absolute",
-              right: { xs: "-3%", md: "25%" },
-              top: {  xs: "25%",md: "10%" },
-              width: { xs: 200, sm:300, md: 350 },
+              right: { xs: "20%", sm: "-10%", md: "25%" },
+              top: {  xs: "20%",md: "10%" },
+              width: { xs: 300, sm:350, md: 350 },
               height: "auto",
               zIndex: 1,
               
@@ -87,9 +87,9 @@ const Contractor = () => {
             src="/assets/contractor/phone2.png"
             alt="phone2"
             sx={{
-              width: { xs: 100, sm: 210, md: 220 },
+              width: { xs: 170, sm: 210, md: 220 },
               position: "absolute",
-              right: { xs: "0%", sm: "-20%", md: "20%" },
+              right: { xs: "20%", sm: "-20%", md: "20%" },
               bootom: { xs: "10%", sm: "0%", md: "0%" },
               zIndex: 1,
               pointerEvents: "none",
@@ -101,9 +101,9 @@ const Contractor = () => {
             src="/assets/contractor/phone1.png"
             alt="phone1"
             sx={{
-              width: { xs: 100, sm: 200, md: 200 },
+              width: { xs: 150, sm: 200, md: 200 },
               position: "relative",
-              right: { xs: "100%", sm: "70%", md: "120%" },
+              right: { xs: "120%", sm: "70%", md: "120%" },
               top:{ xs: "40%"},
               zIndex: 2,
               pointerEvents: "none",
@@ -116,9 +116,9 @@ const Contractor = () => {
             alt="truck"
             sx={{
               position: "absolute",
-              top: { xs: "25%", md: "5%" },
-              right: { xs: "15%", md: "50%" },
-              width: { xs: 120, sm: 100, md: 210 },
+              top: { xs: "14%", sm: "5%", md: "5%" },
+              right: { xs: "45%", md: "50%" },
+              width: { xs: 160, sm: 170, md: 210 },
               zIndex: 3,
               backgroundColor: "",
               pointerEvents: "none",
