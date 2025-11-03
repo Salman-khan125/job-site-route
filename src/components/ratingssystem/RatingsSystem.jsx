@@ -1,24 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Grid, Box, Typography, Stack, Container } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
 
 const RatingsSystem = () => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const loopAnimation = async () => {
-      while (true) {
-        await controls.start({
-          x: [0, 40, 0],
-          y: [0, -10, 0],
-          transition: { duration: 2, ease: "easeInOut" },
-        });
-        await new Promise((res) => setTimeout(res, 2000));
-      }
-    };
-    loopAnimation();
-  }, [controls]);
-
   return (
     <Box
       sx={{
@@ -29,7 +12,6 @@ const RatingsSystem = () => {
         px: { xs: 3, md: 10 },
       }}
     >
-      {/* ✅ NEW: container keeps everything centered even on zoom out */}
       <Container
         maxWidth="lg"
         sx={{
@@ -106,12 +88,13 @@ const RatingsSystem = () => {
               sx={{
                 position: "relative",
                 display: "flex",
+                flexDirection: { xs: "row", md: "row" },
                 justifyContent: { xs: "center", md: "flex-end" },
                 alignItems: "center",
+                gap: { xs: 2, sm: 3, md: 0 },
                 minHeight: { xs: 300, sm: 380, md: 450 },
-                ml: { xs:0, md: 6 },
+                ml: { xs: 0, md: 6 },
                 mt: { xs: 4, md: 0 },
-                ml:35,
               }}
             >
               {/* Ellipse background */}
@@ -121,39 +104,41 @@ const RatingsSystem = () => {
                 alt="ellipse"
                 sx={{
                   position: "absolute",
-                  right: { xs: "auto", md: "25%" },
-                  top: "10%",
-                  width: { xs: 250, sm: 350, md: 500 },
+                  right: { xs: "auto", md: "-30%" },
+                  top: { xs: "20%", sm: "18%", md: "3%" },
+                  width: { xs: 250, sm: 350, md: 450 },
                   height: "auto",
                   zIndex: 0,
                 }}
               />
 
-              {/* Phone 2 (behind) */}
-              <Box
-                component="img"
-                src="/assets/mrs/phone2.png"
-                alt="phone2"
-                sx={{
-                  position: "absolute",
-                  right: { xs: "auto", md: "6%" },
-                  top: { xs: "10%", md: "18%" },
-                  width: { xs: 180, sm: 240, md: 320 },
-                  zIndex: 1,
-                }}
-              />
-
-              {/* Phone 1 (front) */}
+              {/* Phone 1 (left) */}
               <Box
                 component="img"
                 src="/assets/mrs/phone1.png"
                 alt="phone1"
                 sx={{
-                  position: "relative",
-                  right: { xs: "0%", md: "107%" },
-                  top: { xs: "0%", md: "-60%" },
-                  width: { xs: 180, sm: 240, md: 320 },
+                  width: { xs: 170, sm: 200, md: 320 },
+                  height: "auto",
                   zIndex: 2,
+                  position: { xs: "relative", md: "relative" },
+                  top: { xs: 0, md: "20%" },
+                  right: { xs: "auto", md: "40%" },
+                }}
+              />
+
+              {/* Phone 2 (right) */}
+              <Box
+                component="img"
+                src="/assets/mrs/phone2.png"
+                alt="phone2"
+                sx={{
+                  width: { xs: 150, sm: 200, md: 300 },
+                  height: "auto",
+                  zIndex: 1,
+                  position: { xs: "relative", md: "absolute" },
+                  right: { xs: "5%", md: "-55%" },
+                  top: { xs: 50, md: "18%" },
                 }}
               />
             </Box>

@@ -12,6 +12,7 @@ import FoodTruck from "./components/foodtruck/FoodTruck";
 import InfoVideo from "./components/infovideo/InfoVideo";
 import Footer from "./components/footer/Footer";
 import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 
 
 //  Home page (your main sections)
@@ -29,9 +30,9 @@ const Home = () => (
 );
 
 
-const AboutUs = () => (
-  <div style={{ padding: "100px 20px" }}>About Us Page</div>
-);
+// const AboutUs = () => (
+//   <div style={{ padding: "100px 20px" }}>About Us Page</div>
+// );
 const Services = () => (
   <div style={{ padding: "100px 20px" }}>Services Page</div>
 );
