@@ -199,7 +199,11 @@ const Navbar = () => {
                   to={item.path}
                   onClick={toggleDrawer(false)}
                 >
-                  <ListItemText primary={item.label} />
+                  <ListItemText  primary={item.label}
+        sx={{
+          color: "#007A87", // your custom color (blue example)
+          "&:hover": { color: "#1565c0" }, // darker on hover
+        }} />
                 </ListItem>
               ))}
             </List>

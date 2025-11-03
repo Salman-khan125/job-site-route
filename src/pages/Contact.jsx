@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   Box,
   Container,
@@ -8,20 +8,46 @@ import {
   Button,
   IconButton,
   Paper,
+  Alert,
 } from "@mui/material";
 import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  // 🔹 Replace these with your actual IDs
+  const SERVICE_ID = "service_awn9ilp";
+  const TEMPLATE_ID = "template_wtzyndq";
+  const PUBLIC_KEY = "3GVgyBMhNblwlVIQ5";
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then(
+        () => {
+          setSuccess(true);
+          setError(false);
+          e.target.reset(); // clear the form
+        },
+        () => {
+          setError(true);
+          setSuccess(false);
+        }
+      );
+  };
+
   return (
     <Box
       sx={{
         background: "linear-gradient(180deg, #f8fbff 0%, #ffffff 100%)",
         minHeight: "100vh",
         py: { xs: 8, md: 12 },
-        mt:{
-            xs: 8,
-            md: 12,
-        }
+        mt: { xs: 8, md: 12 },
       }}
     >
       <Container maxWidth="md">
@@ -64,9 +90,10 @@ const Contact = () => {
                 Send us a message
               </Typography>
 
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <TextField
                   fullWidth
+                  name="from_name"
                   label="Full Name"
                   variant="outlined"
                   margin="normal"
@@ -74,6 +101,7 @@ const Contact = () => {
                 />
                 <TextField
                   fullWidth
+                  name="from_email"
                   label="Email Address"
                   type="email"
                   variant="outlined"
@@ -82,6 +110,7 @@ const Contact = () => {
                 />
                 <TextField
                   fullWidth
+                  name="message"
                   label="Message"
                   multiline
                   rows={4}
@@ -95,6 +124,7 @@ const Contact = () => {
                   color="primary"
                   size="large"
                   fullWidth
+                  type="submit"
                   sx={{
                     mt: { xs: 3, md: 4 },
                     textTransform: "none",
@@ -104,6 +134,18 @@ const Contact = () => {
                 >
                   Send Message
                 </Button>
+
+                {/* Alerts for feedback */}
+                {success && (
+                  <Alert severity="success" sx={{ mt: 2 }}>
+                    Message sent successfully!
+                  </Alert>
+                )}
+                {error && (
+                  <Alert severity="error" sx={{ mt: 2 }}>
+                    Failed to send message. Please try again later.
+                  </Alert>
+                )}
               </form>
             </Paper>
           </Grid>
@@ -119,35 +161,51 @@ const Contact = () => {
                 textAlign: { xs: "center", md: "left" },
               }}
             >
-              <Typography variant="h6" fontWeight={600} gutterBottom
-              sx={{color: "primary.main"}}>
+              <Typography
+                variant="h6"
+                fontWeight={600}
+                gutterBottom
+                sx={{ color: "primary.main" }}
+              >
                 Contact Information
               </Typography>
 
               <Typography sx={{ mb: 1 }}>
-                📍 8306 wilshire Blvd.
-                   Suite 777
-                   Beverly Hills, CA 90211
+                📍 8306 Wilshire Blvd. Suite 777 Beverly Hills, CA 90211
               </Typography>
-              <Typography sx={{ mb: 1 }}>
-                📧 info@jobsiteroute.com
-              </Typography>
+              <Typography sx={{ mb: 1 }}>📧 info@jobsiteroute.com</Typography>
               <Typography sx={{ mb: 3 }}>📞 (424) 204-2382</Typography>
 
               {/* Social Media Icons */}
-              <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, gap: 1 }}>
-                <IconButton color="primary" href="https://www.facebook.com/jobsiteroute/" target="_blank">
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: { xs: "center", md: "flex-start" },
+                  gap: 1,
+                }}
+              >
+                <IconButton
+                  color="primary"
+                  href="https://www.facebook.com/jobsiteroute/"
+                  target="_blank"
+                >
                   <Facebook />
                 </IconButton>
-                <IconButton color="primary" href="https://www.instagram.com/jobsiteroute/" target="_blank">
+                <IconButton
+                  color="primary"
+                  href="https://www.instagram.com/jobsiteroute/"
+                  target="_blank"
+                >
                   <Instagram />
                 </IconButton>
-                <IconButton color="primary" href="https://www.linkedin.com/in/devin-lockett-31687b22/" target="_blank">
+                <IconButton
+                  color="primary"
+                  href="https://www.linkedin.com/in/devin-lockett-31687b22/"
+                  target="_blank"
+                >
                   <LinkedIn />
                 </IconButton>
               </Box>
-
-             
             </Box>
           </Grid>
         </Grid>
