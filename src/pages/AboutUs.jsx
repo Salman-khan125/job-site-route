@@ -304,267 +304,313 @@ const AboutUs = () => {
         </Typography>
       </Box>
 
+      {/* === For Civilians Section === */}
 
-{/* === For Civilians Section === */}
-
-<Box
-  sx={{
-    mt: { xs: 8, md: 10 },
-    px: { xs: 2, md: 4 },
-    textAlign: { xs: "center", md: "left" },
-  }}
->
-  {/* Title */}
-  <Typography
-    variant="h5"
-    fontWeight={700}
-    sx={{
-      mb: 2,
-      color: "primary.main",
-      fontSize: { xs: "1.4rem", md: "1.8rem" },
-      textAlign: "center",
-    }}
-  >
-    For Civilians: Order Food with a Click
-  </Typography>
-
-  {/* Subtitle */}
-  <Typography
-    variant="body1"
-    sx={{
-      color: "text.secondary",
-      lineHeight: 1.8,
-      maxWidth: "800px",
-      mx: "auto",
-      textAlign: "center",
-    }}
-  >
-    As a civilian, Job Site Route makes ordering fresh, delicious food quick,
-    easy, and hassle-free.
-  </Typography>
-
-  {/* Bullet Points */}
-  <Box
-    component="ul"
-    sx={{
-      mt: 3,
-      listStyle: "none",
-      pl: 0,
-      maxWidth: "800px",
-      mx: "auto",
-    }}
-  >
-    {[
-      {
-        title: "Browse Food Menus",
-        desc: "Click on a nearby food truck to view its menu and place an order instantly.",
-      },
-      {
-        title: "Secure Payments",
-        desc: "Pay safely through the app using multiple payment options, ensuring a smooth transaction.",
-      },
-      {
-        title: "Receive Fresh Meals Fast",
-        desc: "With optimized delivery routes and dedicated truck owners, your food arrives hot and on time.",
-      },
-    ].map((item, index) => (
       <Box
-        component="li"
-        key={index}
-        sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}
+        sx={{
+          mt: { xs: 8, md: 10 },
+          px: { xs: 2, md: 4 },
+          textAlign: { xs: "center", md: "left" },
+        }}
       >
-        <CheckCircleIcon
+        {/* Title */}
+        <Typography
+          variant="h5"
+          fontWeight={700}
           sx={{
+            mb: 2,
             color: "primary.main",
-            mr: 1.2,
-            mt: "3px",
-            fontSize: "1.3rem",
-            flexShrink: 0,
+            fontSize: { xs: "1.4rem", md: "1.8rem" },
+            textAlign: "center",
           }}
-        />
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          <Typography
-            component="span"
-            sx={{ fontWeight: 700, color: "text.secondary" }}
-          >
-            {item.title} –{" "}
-          </Typography>
-          {item.desc}
+        >
+          For Civilians: Order Food with a Click
+        </Typography>
+
+        {/* Subtitle */}
+        <Typography
+          variant="body1"
+          sx={{
+            color: "text.secondary",
+            lineHeight: 1.8,
+            maxWidth: "800px",
+            mx: "auto",
+            textAlign: "center",
+          }}
+        >
+          As a civilian, Job Site Route makes ordering fresh, delicious food
+          quick, easy, and hassle-free.
+        </Typography>
+
+        {/* Bullet Points */}
+        <Box
+          component="ul"
+          sx={{
+            mt: 3,
+            listStyle: "none",
+            pl: 0,
+            maxWidth: "800px",
+            mx: "auto",
+          }}
+        >
+          {[
+            {
+              title: "Browse Food Menus",
+              desc: "Click on a nearby food truck to view its menu and place an order instantly.",
+            },
+            {
+              title: "Secure Payments",
+              desc: "Pay safely through the app using multiple payment options, ensuring a smooth transaction.",
+            },
+            {
+              title: "Receive Fresh Meals Fast",
+              desc: "With optimized delivery routes and dedicated truck owners, your food arrives hot and on time.",
+            },
+          ].map((item, index) => (
+            <Box
+              component="li"
+              key={index}
+              sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}
+            >
+              <CheckCircleIcon
+                sx={{
+                  color: "primary.main",
+                  mr: 1.2,
+                  mt: "3px",
+                  fontSize: "1.3rem",
+                  flexShrink: 0,
+                }}
+              />
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                <Typography
+                  component="span"
+                  sx={{ fontWeight: 700, color: "text.secondary" }}
+                >
+                  {item.title} –{" "}
+                </Typography>
+                {item.desc}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+
+        {/* Closing Paragraph */}
+        <Typography
+          variant="body1"
+          sx={{
+            mt: 3,
+            color: "text.secondary",
+            maxWidth: "800px",
+            mx: "auto",
+            textAlign: "center",
+          }}
+        >
+          No more guessing where food trucks are parked—Job Site Route connects
+          you with the best options near you!
         </Typography>
       </Box>
-    ))}
-  </Box>
 
-  {/* Closing Paragraph */}
-  <Typography
-    variant="body1"
-    sx={{
-      mt: 3,
-      color: "text.secondary",
-      maxWidth: "800px",
-      mx: "auto",
-      textAlign: "center",
-    }}
-  >
-    No more guessing where food trucks are parked—Job Site Route connects you
-    with the best options near you!
-  </Typography>
-</Box>
-
-
- {/* === Why Choose Job Site Route === */}
-<Box
-  sx={{
-    mt: { xs: 8, md: 10 },
-    px: { xs: 2, md: 4 },
-    textAlign: "center",
-  }}
->
-  <Typography
-    variant="h5"
-    fontWeight={800}
-    sx={{
-      mb: 3,
-      color: "primary.main",
-      fontSize: { xs: "1.5rem", md: "2rem" },
-    }}
-  >
-    Why Choose Job Site Route?
-  </Typography>
-
-  <Stack
-    spacing={3}
-    sx={{
-      maxWidth: "800px",
-      mx: "auto",
-      textAlign: "left",
-    }}
-  >
-    {/* Efficiency */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <RocketLaunchIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          Efficiency:
+      {/* === Why Choose Job Site Route === */}
+      <Box
+        sx={{
+          mt: { xs: 8, md: 10 },
+          px: { xs: 2, md: 4 },
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="h5"
+          fontWeight={800}
+          sx={{
+            mb: 3,
+            color: "primary.main",
+            fontSize: { xs: "1.5rem", md: "2rem" },
+          }}
+        >
+          Why Choose Job Site Route?
         </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          Smart routing and real-time tracking ensure fast and on-time deliveries.
+
+        <Stack
+          spacing={3}
+          sx={{
+            maxWidth: "800px",
+            mx: "auto",
+            textAlign: "left",
+          }}
+        >
+          {/* Efficiency */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <RocketLaunchIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                Efficiency:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                Smart routing and real-time tracking ensure fast and on-time
+                deliveries.
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* Transparency */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <LightbulbIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                Transparency:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                Clear communication and payment tracking build trust between
+                users.
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* Flexibility */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <SyncIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                Flexibility:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                Whether you're a food truck owner, contractor, or civilian, the
+                app adapts to your needs.
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* User Friendly Design */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <SmartphoneIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                User-Friendly Design:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                Intuitive and easy to use for everyone, regardless of technical
+                skills.
+              </Typography>
+            </Box>
+          </Stack>
+        </Stack>
+      </Box>
+
+      {/* === How It Works === */}
+      <Box
+        sx={{
+          mt: { xs: 8, md: 10 },
+          px: { xs: 2, md: 4 },
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="h5"
+          fontWeight={800}
+          sx={{
+            mb: 3,
+            color: "primary.main",
+            fontSize: { xs: "1.5rem", md: "2rem" },
+          }}
+        >
+          How It Works
+        </Typography>
+
+        <Stack
+          spacing={3}
+          sx={{
+            maxWidth: "800px",
+            mx: "auto",
+            textAlign: "left",
+          }}
+        >
+          {/* Step 1 */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <CheckCircleIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                Sign Up:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                Choose your role – Truck Owner, Contractor, or Civilian – and
+                create your account.
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* Step 2 */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <CheckCircleIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                Get Started:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                <strong>Truck Owners</strong> – View and follow pre-assigned
+                routes from contractors. <br />
+                <strong>Contractors</strong> – Add delivery sites to guide truck
+                owners to the right locations. <br />
+                <strong>Civilians</strong> – Browse menus, place orders, and
+                track deliveries in real time.
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* Step 3 */}
+          <Stack direction="row" spacing={2} alignItems="flex-start">
+            <CheckCircleIcon color="primary" />
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: 700, color: "text.primary" }}
+              >
+                Enjoy the Benefits:
+              </Typography>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                Experience a seamless, efficient, and stress-free food delivery
+                process.
+              </Typography>
+            </Box>
+          </Stack>
+        </Stack>
+      </Box>
+
+      <Box
+        sx={{
+          textAlign: "center",
+          mt: { xs: 5, md: 6 },
+          
+          borderTop: "1px solid #eee",
+        }}
+      >
+        <Typography
+          variant="body2"
+          sx={{
+            color: "text.secondary",
+            fontSize: { xs: "13px", md: "14px" },
+          }}
+        >
+          © 2025 Job Site Route. All rights reserved.
         </Typography>
       </Box>
-    </Stack>
-
-    {/* Transparency */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <LightbulbIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          Transparency:
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          Clear communication and payment tracking build trust between users.
-        </Typography>
-      </Box>
-    </Stack>
-
-    {/* Flexibility */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <SyncIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          Flexibility:
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          Whether you're a food truck owner, contractor, or civilian, the app adapts to your needs.
-        </Typography>
-      </Box>
-    </Stack>
-
-    {/* User Friendly Design */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <SmartphoneIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          User-Friendly Design:
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          Intuitive and easy to use for everyone, regardless of technical skills.
-        </Typography>
-      </Box>
-    </Stack>
-  </Stack>
-</Box>
-
-  {/* === How It Works === */}
-<Box
-  sx={{
-    mt: { xs: 8, md: 10 },
-    px: { xs: 2, md: 4 },
-    textAlign: "center",
-  }}
->
-  <Typography
-    variant="h5"
-    fontWeight={800}
-    sx={{
-      mb: 3,
-      color: "primary.main",
-      fontSize: { xs: "1.5rem", md: "2rem" },
-    }}
-  >
-    How It Works
-  </Typography>
-
-  <Stack
-    spacing={3}
-    sx={{
-      maxWidth: "800px",
-      mx: "auto",
-      textAlign: "left",
-    }}
-  >
-    {/* Step 1 */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <CheckCircleIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          Sign Up:
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          Choose your role – Truck Owner, Contractor, or Civilian – and create your account.
-        </Typography>
-      </Box>
-    </Stack>
-
-    {/* Step 2 */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <CheckCircleIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          Get Started:
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          <strong>Truck Owners</strong> – View and follow pre-assigned routes from contractors. <br />
-          <strong>Contractors</strong> – Add delivery sites to guide truck owners to the right locations. <br />
-          <strong>Civilians</strong> – Browse menus, place orders, and track deliveries in real time.
-        </Typography>
-      </Box>
-    </Stack>
-
-    {/* Step 3 */}
-    <Stack direction="row" spacing={2} alignItems="flex-start">
-      <CheckCircleIcon color="primary" />
-      <Box>
-        <Typography variant="body1" sx={{ fontWeight: 700, color: "text.primary" }}>
-          Enjoy the Benefits:
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary" }}>
-          Experience a seamless, efficient, and stress-free food delivery process.
-        </Typography>
-      </Box>
-    </Stack>
-  </Stack>
-</Box>
-
     </Box>
   );
 };

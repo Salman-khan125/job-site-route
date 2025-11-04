@@ -13,6 +13,7 @@ import InfoVideo from "./components/infovideo/InfoVideo";
 import Footer from "./components/footer/Footer";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
+import Referrals from "./pages/referrals/Referrals";
 
 
 //  Home page (your main sections)
@@ -33,12 +34,12 @@ const Home = () => (
 // const AboutUs = () => (
 //   <div style={{ padding: "100px 20px" }}>About Us Page</div>
 // );
-const Services = () => (
+ const Services = () => (
   <div style={{ padding: "100px 20px" }}>Services Page</div>
-);
-const Referrals = () => (
-  <div style={{ padding: "100px 20px" }}>Referrals Page</div>
-);
+  );
+// const Referrals = () => (
+//   <div style={{ padding: "100px 20px" }}>Referrals Page</div>
+// );
 // const Contact = () => (
 //   <div style={{ padding: "100px 20px" }}>Contact Page</div>
 // )

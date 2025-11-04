@@ -77,7 +77,7 @@ const FoodTruck = () => {
             alt="ellipse1"
             sx={{
               position: "absolute",
-              left: { xs: "39%", md: "18%" },
+              left: { xs: "40%", md: "18%" },
               top: { xs: "17%", md: "-10%" },
               transform: { xs: "translateX(-50%)", md: "none" },
               width: { xs: 100, sm: 180, md: 200 },
@@ -94,6 +94,7 @@ const FoodTruck = () => {
             sx={{
               width: { xs: 350, sm: 260, md: 500 },
               mt: { xs: 0, md: -17 },
+              left: { xs: "-2%", md: "18%" },
               zIndex: 2,
             }}
           />
