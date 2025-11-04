@@ -293,7 +293,7 @@ const Premium = () => {
         borderRadius: 3,
         boxShadow: 4,
         p: 3,
-        backgroundColor: "primary.main",
+        backgroundColor: "primary.light",
       }}
     >
       <CardContent>
