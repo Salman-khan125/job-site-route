@@ -74,7 +74,7 @@ const Services = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/public/assets/bottle.jpg"
+              src="/assets/bottle.jpg"
               alt="biomedRX"
               sx={{
                 width: "100%",
@@ -130,7 +130,7 @@ const Services = () => {
               sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 component="img"
-                src="/public/assets/lockett.jpg"
+                src="/assets/lockett.jpg"
                 alt="Devin Lockett"
                 
                 sx={{
