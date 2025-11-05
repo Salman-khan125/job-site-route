@@ -34,7 +34,7 @@ const HowAppWorks = () => {
           sx={{
             fontWeight: 700,
             mb: 1,
-            color: "#000",
+            color: "primary.main",
           }}
         >
           How does the Job Site Route app work?

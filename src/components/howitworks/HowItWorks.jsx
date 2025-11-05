@@ -40,7 +40,7 @@ const HowItWorks = () => {
         overflow: "hidden",
       }}
     >
-      <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+      <Typography variant="h4" color="primary.main" sx={{ fontWeight: 700, mb: 1,  }}>
         How Job Site Route Works
       </Typography>
 
