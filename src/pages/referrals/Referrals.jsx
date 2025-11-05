@@ -31,21 +31,21 @@ const pricingData = [
         icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$10",
+        tier: "$10/month",
         price: "$10",
         features:
           "Receive up to 5 push notifications/day for high-traffic sites. Can post 1 signature dish to order-by-click.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$20",
+        tier: "$20/month",
         price: "$20",
         features:
           "Receive 15 push notifications/day, priority placement in the app’s search listings. Can post 5 menu items for pre-ordering.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$50",
+        tier: "$50/month",
         price: "$50",
         features:
           "Unlimited alerts, top placement in listings, analytics on high-traffic locations. Can post entire menu for pre-ordering.",
@@ -67,28 +67,28 @@ const pricingData = [
         icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$10",
+        tier: "$10/month",
         price: "$10",
         features:
           "Post 2 sites/day, contact laborers/food trucks via in-app text/call.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$20",
+        tier: "$20/month",
         price: "$20",
         features:
           "Post 5 sites/day, priority notifications to laborers/trucks.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$30",
+        tier: "$30/month",
         price: "$30",
         features:
           "Post 10 sites/day, advanced analytics, unlimited notifications.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$50",
+        tier: "$50/month",
         price: "$50",
         features:
           "Unlimited postings, full access to all features & analytics.",
@@ -110,21 +110,21 @@ const pricingData = [
         icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$5",
+        tier: "$5/month",
         price: "$5",
         features:
           "Receive 5 notifications/day, basic route info. Can order 1 meal per week.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$10",
+        tier: "$10/month",
         price: "$10",
         features:
           "15 notifications/day, route suggestions, ability to favorite trucks/sites. Can order 1 meal per day.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
-        tier: "$20",
+        tier: "$20/month",
         price: "$20",
         features:
           "Unlimited notifications, detailed analytics on routes & popular trucks/sites. Unlimited food ordering & catering from trucks.",

@@ -6,6 +6,7 @@ const TheImage = () => {
       sx={{
         position: "relative",
         py: { xs: 8, md: 12 },
+        mt: { xs: 10, md: 0 },
         backgroundImage: "url('/assets/theimage/lines.svg')", 
         backgroundSize: "cover",
         backgroundPosition: "center",
