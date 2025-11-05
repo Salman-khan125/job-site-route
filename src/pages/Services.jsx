@@ -123,12 +123,16 @@ const Services = () => {
 
           {/* Image */}
           <Grid item xs={12} md={6}>
-            <Box component="a" href="https://devinlockett.com">
+            <Box component="a"
+             href="https://devinlockett.com"
+             target="_blank"
+             rel="noopener"
+              sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 component="img"
                 src="/public/assets/lockett.jpg"
                 alt="Devin Lockett"
-                rel="noopener"
+                
                 sx={{
                   width: "100%",
                   maxWidth: 300,
