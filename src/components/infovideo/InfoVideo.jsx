@@ -1,14 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Stack, Grid } from "@mui/material";
 
-const InfoVideo = () => {
-const videos = [
-  "https://www.youtube.com/embed/UyR_1PQNy6s",
-  "https://www.youtube.com/embed/4Wmew8VyQw0",
-  "https://www.youtube.com/embed/vsL318SyyuE",
-  "https://www.youtube.com/embed/LodicnY7h80",
-];
+const VideoEmbed = ({ video }) => {
+  const [play, setPlay] = useState(false);
+  const videoId = video.split("/").pop(); // get YouTube video ID
 
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        paddingTop: "56.25%", // 16:9 aspect ratio
+        borderRadius: "16px",
+        overflow: "hidden",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+        cursor: "pointer",
+      }}
+      onClick={() => setPlay(true)}
+    >
+      {play ? (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
+          title="Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: 0,
+          }}
+        />
+      ) : (
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(https://img.youtube.com/vi/${videoId}/hqdefault.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      )}
+    </Box>
+  );
+};
+
+const InfoVideo = () => {
+  const videos = [
+    "https://www.youtube.com/embed/UyR_1PQNy6s",
+    "https://www.youtube.com/embed/4Wmew8VyQw0",
+    "https://www.youtube.com/embed/vsL318SyyuE",
+    "https://www.youtube.com/embed/LodicnY7h80",
+  ];
 
   return (
     <Box
@@ -47,36 +96,15 @@ const videos = [
       </Stack>
 
       {/* Video Grid */}
-      <Grid container
-  spacing={4}
-  justifyContent="center"
-  wrap="wrap"
-  sx={{ maxWidth: "900px", mx: "auto" }}>
+      <Grid
+        container
+        spacing={4}
+        justifyContent="center"
+        sx={{ maxWidth: "900px", mx: "auto" }}
+      >
         {videos.map((video, index) => (
-          <Grid key={index} item xs={12} sm={6} md={6}  lg={6} xl={6}>
-            <Box
-              sx={{
-                width: "100%",
-                aspectRatio: "16 / 9", // wider rectangle
-                borderRadius: "16px",
-                overflow: "hidden",
-                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.1)",
-                mx: "auto",
-              }}
-            >
-              <Box
-                component="iframe"
-                src={video}
-                title={`Video ${index + 1}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  border: 0,
-                }}
-              />
-            </Box>
+          <Grid key={index} item xs={12} sm={6}>
+            <VideoEmbed video={video} />
           </Grid>
         ))}
       </Grid>
