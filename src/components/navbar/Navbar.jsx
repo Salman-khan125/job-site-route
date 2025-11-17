@@ -32,7 +32,7 @@ const Navbar = () => {
     event.type === "keydown" &&
     (event.key === "Tab" || event.key === "Shift")
   ) {
-    return;
+    return; 
   }
   setOpen(state);
 };
@@ -53,7 +53,7 @@ const Navbar = () => {
         top: 0,
         left: 0,
         right: 0,
-        width: "100%", // ✅ replaces 100vw to remove right gap
+        width: "100%", 
         overflowX: "hidden",
         backgroundColor: (theme) => theme.palette.background.paper,
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
@@ -64,12 +64,12 @@ const Navbar = () => {
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          px: { xs: 1, sm: 2 }, // ✅ smaller padding for logo flush left
+          px: { xs: 1, sm: 2 }, 
           minHeight: { xs: 64, md: 80 },
           overflow: "hidden",
         }}
       >
-        {/* ✅ Logo perfectly aligned to left edge */}
+        
         <Box sx={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
           <img
             src="/assets/Hero/logo.png"

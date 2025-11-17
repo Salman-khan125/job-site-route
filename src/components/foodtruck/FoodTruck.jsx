@@ -29,7 +29,7 @@ const FoodTruck = () => {
             fontFamily: "Poppins, sans-serif",
           }}
         >
-          Food trucks build a followings
+          Food trucks build a following
         </Typography>
 
         <Typography
