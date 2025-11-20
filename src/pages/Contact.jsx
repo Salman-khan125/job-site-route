@@ -18,23 +18,27 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  // 🔹 Replace these with your actual IDs
+  // YOUR KEYS
   const SERVICE_ID = "service_awn9ilp";
   const TEMPLATE_ID = "template_wtzyndq";
   const PUBLIC_KEY = "3GVgyBMhNblwlVIQ5";
+  // REMOVED PRIVATE_KEY - Do not use it here!
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+        publicKey: PUBLIC_KEY,
+      })
       .then(
         () => {
           setSuccess(true);
           setError(false);
           e.target.reset(); // clear the form
         },
-        () => {
+        (error) => {
+          console.error("EmailJS Error:", error); // Log error to console so you can see what happened
           setError(true);
           setSuccess(false);
         }
@@ -93,7 +97,7 @@ const Contact = () => {
               <form ref={form} onSubmit={sendEmail}>
                 <TextField
                   fullWidth
-                  name="from_name"
+                  name="from_name" 
                   label="Full Name"
                   variant="outlined"
                   margin="normal"
